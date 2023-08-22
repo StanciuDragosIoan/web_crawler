@@ -1,0 +1,19 @@
+{
+    "sites": [
+        {
+            "domain": "https://logrocket.com/blog",
+            "links": [
+                "blog",
+                "dev",
+                "product-management",
+                "ux-design",
+                "podcast",
+                "features",
+                "solutions",
+                "solve-user-reported-issues",
+                "find-issues-faster",
+                "optimize-conversion-and-adoption"
+            ]
+        }
+    ]
+}
