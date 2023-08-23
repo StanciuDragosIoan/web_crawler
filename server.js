@@ -3,7 +3,7 @@ const Xray = require('x-ray');
 const cheerio = require('cheerio');
 const x = Xray();
 
-const csv = require('fast-csv');
+const csv = require('csv-parser');
 
 
 
@@ -83,19 +83,19 @@ function extractLinksAndContent(html) {
 
 
     //THIS PART DOES NOT WORK!
-    const csvFilePath = "toWrite.csv"
+    // const csvFilePath = "toWrite.csv"
 
-    const csvStream = csv.format({ headers: true });
-    const writeStream = fs.createWriteStream(csvFilePath, { flags: 'a' });
-    csvStream.pipe(writeStream);
+    // const csvStream = csv.format({ headers: true });
+    // const writeStream = fs.createWriteStream(csvFilePath, { flags: 'a' });
+    // csvStream.pipe(writeStream);
 
-    entries.forEach(entry => {
-        const mergedEntry = { ...extractedData, ...entry };
-        csvStream.write(mergedEntry);
-    });
+    // entries.forEach(entry => {
+    //     const mergedEntry = { ...extractedData, ...entry };
+    //     csvStream.write(mergedEntry);
+    // });
 
-    csvStream.end();
-    console.log('Data appended to CSV:', csvFilePath);
+    // csvStream.end();
+    // console.log('Data appended to CSV:', csvFilePath);
 
     // fs.createReadStream("toWrite.csv")
     //     .pipe(csv())
@@ -123,9 +123,26 @@ function extractLinksAndContent(html) {
 
 
 
+    const filename = "saved_from_db.csv";
+    const writableStream = fs.createWriteStream(filename);
+    const columns = [
+        "domain",
+        "company_commercial_name",
+        "company_legal_name",
+        "company_all_available_names",
+        "social_links",
+        "phone",
+        "address",
+    ];
 
+    const row = ["someDomain", "testcompany_commercial_name", "test2company_legal_name", "testcompany_all_available_names", "test/facebook.com", "123123123", "someStreet"];
 
-    // fs.writeFileSync("testWrite.csv", JSON.stringify(dummyData))
+    const allData = [
+        ...columns, "\n",
+        ...row,
+    ].toString()
+
+    fs.writeFileSync("testWrite.csv", allData)
 
 
 
