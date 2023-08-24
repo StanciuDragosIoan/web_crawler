@@ -20,8 +20,7 @@ const urls = [
 ];
 
 
-
-function extractLinksAndContent(html) {
+const extractLinks = (html) => {
     // get anchor tags
     const anchorTagRegex = /<a\s+(?:[^>]*?\s+)?href=(["'])(.*?)\1/g;
     const links = [];
@@ -31,6 +30,14 @@ function extractLinksAndContent(html) {
         const link = match[2];
         links.push(link);
     }
+
+    return links;
+
+}
+
+
+
+function extractLinksAndContent(html) {
 
     // Extract phone numbers
     const phoneRegex = /\b\d{3}-\d{3}-\d{4}\b/g;
@@ -85,15 +92,15 @@ function extractLinksAndContent(html) {
 
 
 
-    const output = {
-        companyName: filteredCompanyNames,
-        links: links.filter(i => i !== '/').filter(i => i !== '#').slice(0, 15),
-        socialLinks: socialMediaMatches,
-        phone: phoneMatches,
-        adress: addressMatches
-    }
+    // const output = {
+    //     companyName: filteredCompanyNames,
+    //     links: links.filter(i => i !== '/').filter(i => i !== '#').slice(0, 15),
+    //     socialLinks: socialMediaMatches,
+    //     phone: phoneMatches,
+    //     adress: addressMatches
+    // }
 
-    return output;
+    // return output;
 }
 
 
@@ -145,7 +152,7 @@ async function main() {
 
     for (const url of urls) {
         const data = await fetchData(url);
-        const { links } = extractLinksAndContent(data, url)
+        const links = extractLinks(data);
         if (data) {
             responseData.push({ url, links });
         }
