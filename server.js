@@ -1,8 +1,12 @@
 const axios = require('axios');
 const fs = require('fs');
 
+
+const filePath = "sample-websites-company-names.csv";
+const inputFilePath = "sample-websites.csv";
+
 const getUrls = () => {
-    const data = fs.readFileSync("sample-websites.csv", "utf-8");
+    const data = fs.readFileSync(inputFilePath, "utf-8");
     return data.trim().split("\r\n");
 }
 
@@ -15,12 +19,15 @@ const urls = [
     // Add more URLs as needed
 ];
 
+
+
 function extractLinksAndContent(html) {
     // get anchor tags
     const anchorTagRegex = /<a\s+(?:[^>]*?\s+)?href=(["'])(.*?)\1/g;
     const links = [];
     let match;
     while ((match = anchorTagRegex.exec(html)) !== null) {
+        //url matched
         const link = match[2];
         links.push(link);
     }
@@ -54,33 +61,27 @@ function extractLinksAndContent(html) {
     const socialMediaMatches = html.match(socialMediaRegex);
 
 
-    // Extract address/location information (simple pattern matching)
+    // Extract address/location information  
     const addressRegex = /(?:[A-Z][a-z]+,\s*){2,}[A-Z][a-z]+/g;
     const addressMatches = html.match(addressRegex);
 
     //write to file
     const newRow = [
-        `${domain}`, // Replace with actual domain
+        `${domain}`,
         `${filteredCompanyNames}`,
         `${filteredCompanyNames}`,
         `${filteredCompanyNames}`,
-        `${socialMediaMatches}`, // Update with actual links
-        `${phoneMatches}`, // Update with actual phone number
-        `${addressMatches}` // Update with actual address
+        `${socialMediaMatches}`,
+        `${phoneMatches}`,
+        `${addressMatches}`
     ];
 
-    // Extract data using regular expressions and store in entries array
-    const entries = [];
-
-
-    const row = ["someDomain22", "testcompany_commercial_name", "test2company_legal_name", "testcompany_all_available_names", "test/facebook.com", "123123123", "someStreet"];
-
-    const rawContent = fs.readFileSync('sample-websites-company-names.csv', 'utf-8');
+    const rawContent = fs.readFileSync(filePath, 'utf-8');
     const lines = rawContent.trim().split('\n');
     const newLines = [...lines, newRow.join(",")];
     const csvContent = newLines.join('\n');
 
-    fs.writeFileSync("sample-websites-company-names.csv", csvContent)
+    fs.writeFileSync(filePath, csvContent)
 
 
 
@@ -94,6 +95,8 @@ function extractLinksAndContent(html) {
 
     return output;
 }
+
+
 
 async function fetchData(url) {
     try {
@@ -114,14 +117,7 @@ const getFullData = () => {
             const data = await fetchData(l);
             // console.log("data here", data)
             if (data) {
-                const {
-                    companyName,
-                    links,
-                    socialLinks,
-                    phone,
-                    adress
-                } = extractLinksAndContent(data);
-
+                extractLinksAndContent(data);
             }
 
         })
@@ -129,7 +125,7 @@ const getFullData = () => {
 }
 
 const addNewColumnsToFile = () => {
-    const rawContent = fs.readFileSync('sample-websites-company-names.csv', 'utf-8');
+    const rawContent = fs.readFileSync(filePath, 'utf-8');
     const lines = rawContent.trim().split('\n');
     const columns = lines[0].split(',');
 
@@ -138,7 +134,7 @@ const addNewColumnsToFile = () => {
     const updatedHeaderRow = allColumns.join(',');
     lines[0] = updatedHeaderRow;
     const updatedContent = lines.join('\n');
-    fs.writeFileSync('sample-websites-company-names.csv', updatedContent);
+    fs.writeFileSync(filePath, updatedContent);
 }
 
 
