@@ -37,7 +37,7 @@ const extractLinks = (html) => {
 
 
 
-function extractLinksAndContent(html) {
+function extractContents(html) {
 
     // Extract phone numbers
     const phoneRegex = /\b\d{3}-\d{3}-\d{4}\b/g;
@@ -90,17 +90,6 @@ function extractLinksAndContent(html) {
 
     fs.writeFileSync(filePath, csvContent)
 
-
-
-    // const output = {
-    //     companyName: filteredCompanyNames,
-    //     links: links.filter(i => i !== '/').filter(i => i !== '#').slice(0, 15),
-    //     socialLinks: socialMediaMatches,
-    //     phone: phoneMatches,
-    //     adress: addressMatches
-    // }
-
-    // return output;
 }
 
 
@@ -124,7 +113,7 @@ const getFullData = () => {
             const data = await fetchData(l);
             // console.log("data here", data)
             if (data) {
-                extractLinksAndContent(data);
+                extractContents(data);
             }
 
         })
