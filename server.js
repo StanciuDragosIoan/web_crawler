@@ -137,9 +137,24 @@ const getFullData = () => {
     })
 }
 
+const addNewColumnsToFile = () => {
+    const rawContent = fs.readFileSync('testWrite.csv', 'utf-8');
+    const lines = rawContent.trim().split('\n');
+    const columns = lines[0].split(',');
+
+    const newColumns = ["social_links", "phone", "address"];
+    const allColumns = [...columns, ...newColumns];
+    const updatedHeaderRow = allColumns.join(',');
+    lines[0] = updatedHeaderRow;
+    const updatedContent = lines.join('\n');
+    fs.writeFileSync('testWrite.csv', updatedContent);
+}
+
 
 async function main() {
     const responseData = [];
+    addNewColumnsToFile();
+
 
     for (const url of urls) {
         const data = await fetchData(url);
