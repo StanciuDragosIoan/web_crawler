@@ -75,12 +75,12 @@ function extractLinksAndContent(html) {
 
     const row = ["someDomain22", "testcompany_commercial_name", "test2company_legal_name", "testcompany_all_available_names", "test/facebook.com", "123123123", "someStreet"];
 
-    const rawContent = fs.readFileSync('testWrite.csv', 'utf-8');
+    const rawContent = fs.readFileSync('sample-websites-company-names.csv', 'utf-8');
     const lines = rawContent.trim().split('\n');
     const newLines = [...lines, newRow.join(",")];
     const csvContent = newLines.join('\n');
 
-    fs.writeFileSync("testWrite.csv", csvContent)
+    fs.writeFileSync("sample-websites-company-names.csv", csvContent)
 
 
 
@@ -129,7 +129,7 @@ const getFullData = () => {
 }
 
 const addNewColumnsToFile = () => {
-    const rawContent = fs.readFileSync('testWrite.csv', 'utf-8');
+    const rawContent = fs.readFileSync('sample-websites-company-names.csv', 'utf-8');
     const lines = rawContent.trim().split('\n');
     const columns = lines[0].split(',');
 
@@ -138,7 +138,7 @@ const addNewColumnsToFile = () => {
     const updatedHeaderRow = allColumns.join(',');
     lines[0] = updatedHeaderRow;
     const updatedContent = lines.join('\n');
-    fs.writeFileSync('testWrite.csv', updatedContent);
+    fs.writeFileSync('sample-websites-company-names.csv', updatedContent);
 }
 
 
