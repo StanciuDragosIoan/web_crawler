@@ -82,67 +82,14 @@ function extractLinksAndContent(html) {
     const entries = [];
 
 
-    //THIS PART DOES NOT WORK!
-    // const csvFilePath = "toWrite.csv"
+    const row = ["someDomain22", "testcompany_commercial_name", "test2company_legal_name", "testcompany_all_available_names", "test/facebook.com", "123123123", "someStreet"];
 
-    // const csvStream = csv.format({ headers: true });
-    // const writeStream = fs.createWriteStream(csvFilePath, { flags: 'a' });
-    // csvStream.pipe(writeStream);
+    const rawContent = fs.readFileSync('testWrite.csv', 'utf-8');
+    const lines = rawContent.trim().split('\n');
+    const newLines = [...lines, row.join(",")];
+    const csvContent = newLines.join('\n');
 
-    // entries.forEach(entry => {
-    //     const mergedEntry = { ...extractedData, ...entry };
-    //     csvStream.write(mergedEntry);
-    // });
-
-    // csvStream.end();
-    // console.log('Data appended to CSV:', csvFilePath);
-
-    // fs.createReadStream("toWrite.csv")
-    //     .pipe(csv())
-    //     .on('data', (row) => existingRows.push(row))
-    //     .on('end', () => {
-    //         // Add the extracted data to the existing rows
-    //         existingRows.push(extractedData);
-
-    //         // Write the combined data back to the CSV file
-    //         const combinedCSVData = existingRows.map(row => ({
-
-    //             ...extractedData,
-    //             ...row,
-    //         }));
-
-    //         const csvWriter = fs.createWriteStream("toWrite.csv");
-    //         csvWriter.write(Object.keys(combinedCSVData[0]).join(',') + '\n');
-    //         combinedCSVData.forEach(data => {
-    //             csvWriter.write(Object.values(data).join(',') + '\n');
-    //         });
-    //         csvWriter.end();
-
-    //         console.log('Data written to CSV file:', "toWrite.csv");
-    //     });
-
-
-
-    const filename = "saved_from_db.csv";
-    const writableStream = fs.createWriteStream(filename);
-    const columns = [
-        "domain",
-        "company_commercial_name",
-        "company_legal_name",
-        "company_all_available_names",
-        "social_links",
-        "phone",
-        "address",
-    ];
-
-    const row = ["someDomain", "testcompany_commercial_name", "test2company_legal_name", "testcompany_all_available_names", "test/facebook.com", "123123123", "someStreet"];
-
-    const allData = [
-        ...columns, "\n",
-        ...row,
-    ].toString()
-
-    fs.writeFileSync("testWrite.csv", allData)
+    fs.writeFileSync("testWrite.csv", csvContent)
 
 
 
