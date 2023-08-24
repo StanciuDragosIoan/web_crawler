@@ -1,19 +1,20 @@
-domain,company_commercial_name,company_legal_name,company_all_available_names,social_links,phone,address
+domain,company_commercial_name,company_legal_name,company_all_available_names,social_links,phone,address,social_links,phone,address
 bostonzen.org,Greater Boston Zen Center,GREATER BOSTON ZEN CENTER INC.,Greater Boston Zen Center | Boston Zen | GREATER BOSTON ZEN CENTER INC.
 mazautoglass.com,MAZ Auto Glass,,MAZ Auto Glass
-someDomain22,testcompany_commercial_name,test2company_legal_name,testcompany_all_available_names,test/facebook.com,123123123,someStreet
-someDomain22,testcompany_commercial_name,test2company_legal_name,testcompany_all_available_names,test/facebook.com,123123123,someStreet
-someDomain22,testcompany_commercial_name,test2company_legal_name,testcompany_all_available_names,test/facebook.com,123123123,someStreet
-someDomain22,testcompany_commercial_name,test2company_legal_name,testcompany_all_available_names,test/facebook.com,123123123,someStreet
-someDomain22,testcompany_commercial_name,test2company_legal_name,testcompany_all_available_names,test/facebook.com,123123123,someStreet
-someDomain22,testcompany_commercial_name,test2company_legal_name,testcompany_all_available_names,test/facebook.com,123123123,someStreet
-someDomain22,testcompany_commercial_name,test2company_legal_name,testcompany_all_available_names,test/facebook.com,123123123,someStreet
-someDomain22,testcompany_commercial_name,test2company_legal_name,testcompany_all_available_names,test/facebook.com,123123123,someStreet
-someDomain22,testcompany_commercial_name,test2company_legal_name,testcompany_all_available_names,test/facebook.com,123123123,someStreet
-someDomain22,testcompany_commercial_name,test2company_legal_name,testcompany_all_available_names,test/facebook.com,123123123,someStreet
-someDomain22,testcompany_commercial_name,test2company_legal_name,testcompany_all_available_names,test/facebook.com,123123123,someStreet
-someDomain22,testcompany_commercial_name,test2company_legal_name,testcompany_all_available_names,test/facebook.com,123123123,someStreet
-someDomain22,testcompany_commercial_name,test2company_legal_name,testcompany_all_available_names,test/facebook.com,123123123,someStreet
-someDomain22,testcompany_commercial_name,test2company_legal_name,testcompany_all_available_names,test/facebook.com,123123123,someStreet
-someDomain22,testcompany_commercial_name,test2company_legal_name,testcompany_all_available_names,test/facebook.com,123123123,someStreet
-someDomain22,testcompany_commercial_name,test2company_legal_name,testcompany_all_available_names,test/facebook.com,123123123,someStreet
+https://logrocket.com/blog,LogRocket Blog - Resources to Help Product Teams Ship Amazing Digital Experiences,LogRocket Blog - Resources to Help Product Teams Ship Amazing Digital Experiences,LogRocket Blog - Resources to Help Product Teams Ship Amazing Digital Experiences,null,null,Performance, Safety, And
+blog.logrocket.com,LogRocket Blog - Resources to Help Product Teams Ship Amazing Digital Experiences,LogRocket Blog - Resources to Help Product Teams Ship Amazing Digital Experiences,LogRocket Blog - Resources to Help Product Teams Ship Amazing Digital Experiences,null,null,Performance, Safety, And
+blog.logrocket.com,Product Management - LogRocket Blog,Product Management - LogRocket Blog,Product Management - LogRocket Blog,null,null,null
+cdn.sanity.io,,,,href="https://twitter.com,href="https://www.facebook.com,href="https://www.linkedin.com,null,Regular,Menlo,Monaco,Consolas,Neue,Arial,Noto,Regular,Menlo,Monaco,Consolas,Liberation,Neue,Arial,Noto,Ms, Marketers, Support
+blog.logrocket.com,Featured Posts Archives - LogRocket Blog,Featured Posts Archives - LogRocket Blog,Featured Posts Archives - LogRocket Blog,null,null,null
+blog.logrocket.com,Pascal Akunne,  LogRocket Blog,Pascal Akunne,  LogRocket Blog,Pascal Akunne,  LogRocket Blog,null,null,null
+blog.logrocket.com,UX Design - LogRocket Blog,UX Design - LogRocket Blog,UX Design - LogRocket Blog,null,null,null
+blog.logrocket.com,How to avoid CSS ch layout shifts - LogRocket Blog,How to avoid CSS ch layout shifts - LogRocket Blog,How to avoid CSS ch layout shifts - LogRocket Blog,href="https://twitter.com,href="https://www.facebook.com,href="https://www.linkedin.com,null,null
+logrocket-assets.io,,,,href="https://twitter.com,href="https://www.facebook.com,href="https://www.linkedin.com,null,Regular,Menlo,Monaco,Consolas,Neue,Arial,Noto,Regular,Menlo,Monaco,Consolas,Liberation,Neue,Arial,Noto,Ms, Marketers, Support
+blog.logrocket.com,Pascal Akunne,  LogRocket Blog,Pascal Akunne,  LogRocket Blog,Pascal Akunne,  LogRocket Blog,null,null,null
+logrocket-assets.io,,,,href="https://twitter.com,href="https://www.facebook.com,href="https://www.linkedin.com,null,Regular,Menlo,Monaco,Consolas,Neue,Arial,Noto,Regular,Menlo,Monaco,Consolas,Liberation,Neue,Arial,Noto,Ms, Marketers, Support
+logrocket-assets.io,,,,href="https://twitter.com,href="https://www.facebook.com,href="https://www.linkedin.com,null,Regular,Menlo,Monaco,Consolas,Neue,Arial,Noto,Regular,Menlo,Monaco,Consolas,Liberation,Neue,Arial,Noto,Ms, Marketers, Support
+blog.logrocket.com,How to avoid CSS ch layout shifts - LogRocket Blog,How to avoid CSS ch layout shifts - LogRocket Blog,How to avoid CSS ch layout shifts - LogRocket Blog,href="https://twitter.com,href="https://www.facebook.com,href="https://www.linkedin.com,null,null
+lp.logrocket.com,Signup for LogRocket,Signup for LogRocket,Signup for LogRocket,null,null,null
+logrocket-assets.io,,,,href="https://twitter.com,href="https://www.facebook.com,href="https://www.linkedin.com,null,Regular,Menlo,Monaco,Consolas,Neue,Arial,Noto,Regular,Menlo,Monaco,Consolas,Liberation,Neue,Arial,Noto,Ms, Marketers, Support
+podrocket.logrocket.com,PodRocket - A web development podcast from LogRocket,PodRocket - A web development podcast from LogRocket,PodRocket - A web development podcast from LogRocket,href="https://twitter.com,null,null
+assets.logrocket.com,LogRocket,LogRocket,LogRocket,null,null,null
