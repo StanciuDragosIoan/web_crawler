@@ -1,23 +1,32 @@
 const axios = require('axios');
 const fs = require('fs');
-
-
+const express = require('express');
+const path = require('path');
+const app = express();
 const filePath = "sample-websites-company-names.csv";
 const inputFilePath = "sample-websites.csv";
+
+app.get("/companies", (req, res) => {
+    res.sendFile(path.join(__dirname, 'views/index.html'))
+})
+
+
+app.get("/data", async (req, res) => {
+    const data = fs.readFileSync(filePath, "utf-8");
+    const rows = data.split("\n");
+    return res.send(rows);
+})
+
+
 
 const getUrls = () => {
     const data = fs.readFileSync(inputFilePath, "utf-8");
     return data.trim().split("\r\n");
 }
 
-// const urls = getUrls().filter(i => i !== "domain").map(i => `https://${i}`);
+const urls = getUrls().filter(i => i !== "domain").map(i => `https://${i}`);
 
-const urls = [
-    "https://logrocket.com/blog",
-    // "https://bostonzen.org", "https://mazautoglass.com",
-    // "https://melatee.com", "timent.com"
-    // Add more URLs as needed
-];
+
 
 
 const extractLinks = (html) => {
@@ -96,7 +105,7 @@ function extractContents(html) {
 
 async function fetchData(url) {
     try {
-        const response = await axios.get(url);
+        const response = await axios.get(url, { timeout: 1500 });
         return response.data;
     } catch (error) {
         console.error(`Error fetching data from ${url}:`, error.message);
@@ -165,3 +174,5 @@ async function main() {
 }
 
 main();
+
+app.listen(3000)
